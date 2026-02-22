@@ -9,6 +9,7 @@ export default function LoginPage() {
     const { login, isLoggingIn, isAuthenticated } = useAuth();
     const [email, setEmail] = useState('john@pulsetrack.demo');
     const [password, setPassword] = useState('demo1234');
+    const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState('');
 
     // If already authenticated, the useAuth hook will redirect
@@ -99,15 +100,37 @@ export default function LoginPage() {
                             >
                                 Password
                             </label>
-                            <input
-                                id="password"
-                                type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                placeholder="••••••••"
-                                autoComplete="current-password"
-                                className="h-12 rounded-xl border border-[var(--color-glass-border)] bg-[var(--color-glass-bg)] px-4 text-text-primary placeholder:text-text-muted outline-none transition-all focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
-                            />
+                            <div className="relative flex items-center">
+                                <input
+                                    id="password"
+                                    type={showPassword ? 'text' : 'password'}
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    placeholder="••••••••"
+                                    autoComplete="current-password"
+                                    className="w-full h-12 rounded-xl border border-[var(--color-glass-border)] bg-[var(--color-glass-bg)] px-4 pr-12 text-text-primary placeholder:text-text-muted outline-none transition-all focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
+                                />
+                                <button
+                                    type="button"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    className="absolute right-4 text-text-muted hover:text-text-primary transition-colors focus:outline-none"
+                                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                                >
+                                    {showPassword ? (
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                            <path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49" />
+                                            <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" />
+                                            <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" />
+                                            <path d="m2 2 20 20" />
+                                        </svg>
+                                    ) : (
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                            <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
+                                            <circle cx="12" cy="12" r="3" />
+                                        </svg>
+                                    )}
+                                </button>
+                            </div>
                         </div>
 
                         {/* Submit */}
