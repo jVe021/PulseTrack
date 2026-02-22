@@ -79,6 +79,15 @@ To test the resilience of the application:
 5. In your DevTools, switch back to **No throttling** (Online).
 6. Observe the app automatically reconnecting, the offline banner sliding up, and the background synchronization syncing the cached data!
 
+## 🌐 Live Demo
+
+👉 https://pulse-track-teal.vercel.app/
+
+## 🔑 Demo Login
+
+You can use any email/password combination.
+Authentication is simulated for demonstration purposes.
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/pulsetrack/issues).
