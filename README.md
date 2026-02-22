@@ -2,7 +2,8 @@
 
 A modern, real-time health monitoring dashboard built with Next.js, featuring a clean SaaS aesthetics, glassmorphism design, real-time WebSocket data simulation, and comprehensive offline support.
 
-![PulseTrack Dashboard Preview](public/icon512_maskable.png) *(Note: Replace with an actual screenshot once deployed)*
+![PulseTrack Dashboard Preview](public/PulseTrack1.png)
+![PulseTrack Dashboard Preview](public/PulseTrack2.png)
 
 ## ✨ Features
 
@@ -58,6 +59,15 @@ A modern, real-time health monitoring dashboard built with Next.js, featuring a 
 4. **Open your browser:**
    Navigate to [http://localhost:3000](http://localhost:3000). You'll be presented with the login screen. You can log in using any email/password combination as it's a simulated environment.
 
+## 🌐 Live Demo
+
+👉 https://pulse-track-teal.vercel.app/
+
+## 🔑 Demo Login
+
+You can use any email/password combination.
+Authentication is simulated for demonstration purposes.
+
 ## 📂 Project Structure
 
 - `src/app/` - Next.js App Router structure (login, dashboard, 404).
@@ -78,15 +88,6 @@ To test the resilience of the application:
 4. Observe the offline banner slide down. Your real-time metrics will still update but will be cached into IndexedDB.
 5. In your DevTools, switch back to **No throttling** (Online).
 6. Observe the app automatically reconnecting, the offline banner sliding up, and the background synchronization syncing the cached data!
-
-## 🌐 Live Demo
-
-👉 https://pulse-track-teal.vercel.app/
-
-## 🔑 Demo Login
-
-You can use any email/password combination.
-Authentication is simulated for demonstration purposes.
 
 ## 🤝 Contributing
 
